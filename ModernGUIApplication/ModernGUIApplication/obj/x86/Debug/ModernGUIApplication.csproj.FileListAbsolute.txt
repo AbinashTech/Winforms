@@ -5,5 +5,4 @@ D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\Modern
 D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\ModernGUIApplication.csproj.GenerateResource.Cache
 D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\ModernGUIApplication.exe
 D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\ModernGUIApplication.pdb
-D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\ModernGUIApplication.csprojAssemblyReference.cache
-D:\shamim\working\ModernGUIApplication\ModernGUIApplication\obj\x86\Debug\ModernGUIApplication.csproj.CoreCompileInputs.cache
+D:\shamim\working\ModernGUIApplication\ModernGUIApplication\bin\Debug\ModernGUIApplication.exe.config
