@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 env:
   solution: 'ModernGUIApplication/ModernGUIApplication.sln'
-  buildPlatform: 'Any CPU'
+  buildPlatform: 'X86'
   buildConfiguration: 'Release'
 
 jobs:
