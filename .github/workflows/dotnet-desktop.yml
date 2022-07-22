@@ -1,32 +1,21 @@
-name: "DotnetBuild"
-# Controls when the workflow will run
+name: ".NET Framework Desktop"
+
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 env:
-  PROJECT_PATH: 'ModernGUIApplication/ModernGUIApplication.sln'
-  
+  solution: 'ModernGUIApplication/ModernGUIApplication.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
 
 jobs:
-  deploy:
-    name: 'Deploy'
-    runs-on: 'windows-latest'
+  build:
+    runs-on: windows-latest
+
     steps:
-    - name: 'Checkout'
-      uses: actions/checkout@v2
-
-    - name: 'Install dotnet'
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.1.x'
-
-    - name: 'Restore packages'
-      run: dotnet restore ${{ env.PROJECT_PATH }}
-
-    - name: 'Build project'
-      run: dotnet build ${{ env.PROJECT_PATH }} 
-    - name: 'Get Version'
-      id: version
-      uses: battila7/get-version-action@v2
+    - uses: actions/checkout@v2
+    - uses: nuget/setup-nuget@v1    
+    - run: nuget restore '${{ env.solution }}'
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.2
+    - run: msbuild '${{ env.solution }}' /p:Configuration='${{ env.buildConfiguration }}' /p:platform='${{ env.buildPlatform }}'
